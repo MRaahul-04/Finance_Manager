@@ -1,0 +1,6 @@
+# no external dependencies - uses stdlib only
+pytest
+pytest-sugar
+matplotlib
+pandas
+argparse
