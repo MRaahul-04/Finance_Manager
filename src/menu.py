@@ -1,3 +1,14 @@
+"""
+This module handles all command-line user interactions.
+It acts as the presentation layer of the application.
+
+Responsibilities:
+- Display menus
+- Collect user input
+- Call business logic functions
+- Control application flow
+"""
+
 import os
 from time import sleep
 from src.file_manager import load_expenses, append_expense, save_expenses, backup_data, list_backups, restore_backup
@@ -35,6 +46,7 @@ def pause():
 
 
 def add_new_expense():
+    # Adding new expenses to the tracker
     clear()
     print("ADD NEW EXPENSE:")
     while True:
@@ -78,6 +90,7 @@ def add_new_expense():
 
 
 def view_all_expenses():
+    # View all saved expenses
     clear()
     exps = load_expenses()
     print("ALL EXPENSES:")
@@ -90,6 +103,7 @@ def view_all_expenses():
 
 
 def view_category_summary():
+    # View summary of all category wise expenses
     clear()
     exps = load_expenses()
     if not exps:
@@ -115,6 +129,7 @@ def view_category_summary():
 
 
 def generate_month_report():
+    # Generate report for the specific month
     clear()
     exps = load_expenses()
     if not exps:
@@ -132,6 +147,7 @@ def generate_month_report():
 
 
 def search_expenses():
+    # Search any required expense using Date, Cat, Amount, Keyword.
     clear()
     exps = load_expenses()
     if not exps:
@@ -168,6 +184,7 @@ def search_expenses():
 
 
 def backup_menu():
+    # Shows the backup menu
     clear()
     print("BACKUP & RESTORE")
     print("1. Create backup")
@@ -218,7 +235,7 @@ def generate_charts_menu():
 
     choice = input("Choice (1-4): ").strip()
 
-    if choice == '1':
+    if choice == '1': # Generates category wise chart summary
         path = generate_category_chart(exps)
         if path:
             print(f"\n📊 Chart generated successfully!")
@@ -236,7 +253,7 @@ def generate_charts_menu():
             print("Failed to generate chart.")
         pause()
 
-    elif choice == '3':  # Budget vs Actual
+    elif choice == '3':  # Budget vs Actual chart distribution
         path = generate_budget_vs_actual_chart(exps)
         if path:
             print(f"\n📊 Budget vs Actual chart generated successfully!\nSaved at: {path}")
@@ -244,6 +261,14 @@ def generate_charts_menu():
 
 
 def main_menu_loop():
+    """
+    Infinite loop displaying menu until user exits.
+
+    Pattern:
+    - Display options
+    - Route to feature functions
+    - Return control safely
+    """
     while True:
         clear()
         print("=" * 42)
@@ -291,6 +316,7 @@ def main_menu_loop():
 
 
 def edit_expense():
+    # Edit any existing expense based on the Expense ID
     clear()
     exps = load_expenses()
     if not exps:
@@ -339,6 +365,7 @@ def edit_expense():
 
 
 def delete_expense():
+    # Delete any existing expense based on Expense ID
     clear()
     exps = load_expenses()
     if not exps:
@@ -373,6 +400,7 @@ def delete_expense():
 
 
 def budget_menu():
+    # Shows Budget menu for modification or deletion
     clear()
     budgets = load_budgets()
 

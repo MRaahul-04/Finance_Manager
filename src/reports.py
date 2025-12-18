@@ -1,4 +1,13 @@
-# reports.py
+"""
+Responsible for analytical computations and report generation.
+
+Includes:
+- Aggregations
+- Monthly summaries
+- CSV reports
+- Chart generation (matplotlib)
+"""
+
 from collections import defaultdict
 from datetime import datetime
 from utils import format_currency
@@ -19,12 +28,14 @@ CHARTS_DIR.mkdir(exist_ok=True)
 
 
 def total_and_average(expenses: List[Expense]):
+    # Shows the total and average of all listed expenses while exporting the monthly report
     total = sum(e.amount for e in expenses)
     average = (total / len(expenses)) if expenses else 0.0
     return total, average
 
 
 def category_summary(expenses: List[Expense]):
+    # Fetch the category wise summary of all listed expenses
     summary = defaultdict(float)
     for e in expenses:
         summary[e.category] += e.amount
@@ -32,6 +43,7 @@ def category_summary(expenses: List[Expense]):
 
 
 def monthly_summary(expenses: List[Expense]):
+    # Fetch monthly summary for listed expenses
     months = defaultdict(float)  # 'YYYY-MM' -> amount
     for e in expenses:
         try:

@@ -62,6 +62,39 @@ reports/
   * Budget exceeds
   * Budget reaches warning threshold
 
+### 📌 Architecture Style
+
+Modular, Layered CLI Application
+```
+Presentation Layer  → menu.py
+Business Logic      → expense.py, budget_manager.py, reports.py
+Data Persistence    → file_manager.py
+Utilities / Helpers → utils.py
+Entry Point         → main.py
+```
+
+### 🧠 Core Data Structures Used
+| Component | Data Structure     | Why                              |
+|-----------|--------------------|----------------------------------|
+| Expenses  | `list[Expense]`    | Ordered, iterable, easy CRUD     |
+| Expense   | Class (OOP)        | Encapsulation of data & behavior |
+| Budgets   | `dict[str, float]` | Fast category lookup             |
+| CSV       | Row-based storage  | Simple persistence               |
+| Charts    | Aggregated dicts   | Matplotlib compatibility         |
+
+
+### 🧮 Algorithms Used (Simple & Effective)
+
+| Feature          | Algorithm                |
+|------------------|--------------------------|
+| Expense total    | Linear scan `O(n)`       |
+| Category summary | Hash map aggregation     |
+| Monthly filter   | String prefix match      |
+| Budget alerts    | Threshold comparison     |
+| Search           | Linear filtering         |
+| Backup           | File copy with timestamp |
+
+
 ### 🔔 Smart Alerts
 
 * 🔴 Budget exceeded alerts
@@ -108,18 +141,18 @@ Finance_Manager/
 │   └── utils.py                # Validation & helper utilities
 │
 ├── charts/
-│   ├── category_spending.png
-│   ├── monthly_spending.png
-│   └── budget_vs_actual.png
+│   ├── *category_spending.png
+│   ├── *monthly_spending.png
+│   └── *budget_vs_actual.png
 ├── data/
 │   ├── expenses.csv        # Expense data
 │   └── budgets.json        # Budget data
 │
 ├── backups/
-│   └── expenses_backup_20251218_141937.csv
+│   └── *expenses_backup.csv
 │
 ├── reports/
-│   └── report_2024-02.csv
+│   └── report_****-**.csv
 │
 ├── tests/
 │   ├── test_utils.py
@@ -273,7 +306,7 @@ pytest -v
 
 **Rahul Mahakal**
 * 🎓 BCA – Amity University
-* *💡 Python | Data Science | AI/ML Projects
+* 💡 Python | Data Science | AI/ML Projects
 
 ---
 

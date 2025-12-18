@@ -1,3 +1,10 @@
+"""
+Unit tests ensure:
+- File operations work independently
+- No interference with real data
+- Regression-safe updates
+"""
+
 import subprocess
 import sys
 

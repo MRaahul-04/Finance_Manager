@@ -1,3 +1,13 @@
+"""
+Utility and helper functions used across the application.
+
+Includes:
+- Input validation
+- Date parsing
+- Currency formatting
+- Constants
+"""
+
 from datetime import datetime
 from pathlib import Path
 
@@ -8,6 +18,10 @@ CATEGORIES = ['Food', 'Transport', 'Entertainment', 'Shopping', 'Bills', 'Health
 
 
 def validate_amount(amount_str):
+    """
+    Validates numeric amount input.
+    Returns (success, value/message).
+    """
     try:
         amount = float(amount_str)
         if amount <= 0:
@@ -18,7 +32,7 @@ def validate_amount(amount_str):
 
 
 def validate_date(date_str):
-    # Accept YYYY-MM-DD
+    # validate date format, Accept YYYY-MM-DD
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
         return True, dt.strftime("%Y-%m-%d")
@@ -27,6 +41,7 @@ def validate_date(date_str):
 
 
 def validate_category(cat_str):
+    # Validates from listed categories
     cat = cat_str.strip()
     if not cat:
         return False, "Category cannot be empty."
@@ -35,8 +50,10 @@ def validate_category(cat_str):
 
 
 def format_currency(amount):
+    # Format a numeric amount as Indian currency (₹) with commas and 2 decimals.
     return f"₹{amount:,.2f}"
 
 
 def truncate(text, n=60):
+    # Shorten long text to a fixed length and append ellipsis if truncated.
     return text if len(text) <= n else text[:n - 3] + "..."
