@@ -1,6 +1,6 @@
 import os
-from expense import Expense
-from file_manager import save_expenses, load_expenses
+from src.expense import Expense
+from src.file_manager import save_expenses, load_expenses
 
 TEST_DIR = "tests"
 TEST_FILE = os.path.join(TEST_DIR, "test_expenses.csv")

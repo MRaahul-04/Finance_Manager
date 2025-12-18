@@ -3,8 +3,8 @@
 import pytest
 import os
 import sys
-from budget_manager import set_budget, load_budgets, delete_budget, calculate_category_spend, budget_alerts
-from expense import Expense
+from src.budget_manager import set_budget, load_budgets, delete_budget, budget_alerts
+from src.expense import Expense
 
 BUDGET_FILE = "data/budgets.json"
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))

@@ -1,4 +1,4 @@
-from utils import validate_amount, validate_date, validate_category
+from src.utils import validate_amount, validate_date, validate_category
 
 
 def test_validate_amount():
