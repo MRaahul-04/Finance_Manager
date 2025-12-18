@@ -98,22 +98,28 @@ reports/
 ```
 Finance_Manager/
 │
-├── main.py                 # Application entry point
-├── menu.py                 # CLI menu system & flow control
-├── expense.py              # Expense class (OOP model)
-├── file_manager.py         # CSV backup, restore & persistence
-├── budget_manager.py       # Budget logic & alerts
-├── reports.py              # Reports & chart generation
-├── utils.py                # Validation & helper utilities
+├── src/
+│   ├── main.py                 # Application entry point
+│   ├── menu.py                 # CLI menu system & flow control
+│   ├── expense.py              # Expense class (OOP model)
+│   ├── file_manager.py         # CSV backup, restore & persistence
+│   ├── budget_manager.py       # Budget logic & alerts
+│   ├── reports.py              # Reports & chart generation
+│   └── utils.py                # Validation & helper utilities
 │
+├── charts/
+│   ├── category_spending.png
+│   ├── monthly_spending.png
+│   └── budget_vs_actual.png
 ├── data/
 │   ├── expenses.csv        # Expense data
 │   └── budgets.json        # Budget data
 │
+├── backups/
+│   └── expenses_backup_20251218_141937.csv
+│
 ├── reports/
-│   ├── category_spending.png
-│   ├── monthly_spending.png
-│   └── budget_vs_actual.png
+│   └── report_2024-02.csv
 │
 ├── tests/
 │   ├── test_utils.py
