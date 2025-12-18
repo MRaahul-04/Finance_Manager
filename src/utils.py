@@ -1,5 +1,8 @@
-# utils.py
 from datetime import datetime
+from pathlib import Path
+
+# Project root directory (Finance_Manager/)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 CATEGORIES = ['Food', 'Transport', 'Entertainment', 'Shopping', 'Bills', 'Health', 'Other']
 

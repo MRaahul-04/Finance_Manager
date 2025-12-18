@@ -2,8 +2,9 @@
 import json
 import os
 from collections import defaultdict
+from src.utils import PROJECT_ROOT
 
-BUDGET_FILE = "../data/budgets.json"
+BUDGET_FILE = PROJECT_ROOT / "data" / "budgets.json"
 
 
 def load_budgets():

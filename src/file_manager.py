@@ -4,17 +4,19 @@ import os
 import shutil
 from datetime import datetime
 from src.expense import Expense
+from src.utils import PROJECT_ROOT
 
-DATA_DIR = "../data"
-DATA_FILE = os.path.join(DATA_DIR, "expenses.csv")
-BACKUP_DIR = "../backups"
+DATA_DIR = PROJECT_ROOT / "data"
+BACKUP_DIR = PROJECT_ROOT / "backups"
+DATA_FILE = DATA_DIR / "expenses.csv"
 
 CSV_HEADER = ['Date', 'Category', 'Amount', 'Description']
 
 
 def ensure_dirs():
-    os.makedirs(DATA_DIR, exist_ok=True)
-    os.makedirs(BACKUP_DIR, exist_ok=True)
+    DATA_DIR.mkdir(exist_ok=True)
+    BACKUP_DIR.mkdir(exist_ok=True)
+
     # ensure file exists with header
     if not os.path.exists(DATA_FILE):
         with open(DATA_FILE, 'w', newline='', encoding='utf-8') as f:

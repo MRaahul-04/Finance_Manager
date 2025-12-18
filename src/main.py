@@ -1,4 +1,3 @@
-# main.py
 from src.menu import main_menu_loop
 from src.file_manager import ensure_dirs
 

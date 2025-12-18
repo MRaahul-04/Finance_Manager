@@ -9,6 +9,13 @@ import csv
 import os
 import platform
 import subprocess
+from src.utils import PROJECT_ROOT
+
+REPORTS_DIR = PROJECT_ROOT / "reports"
+CHARTS_DIR = PROJECT_ROOT / "charts"
+
+REPORTS_DIR.mkdir(exist_ok=True)
+CHARTS_DIR.mkdir(exist_ok=True)
 
 
 def total_and_average(expenses: List[Expense]):
@@ -42,7 +49,7 @@ def generate_monthly_report(expenses: List[Expense], month_str: str, out_dir="re
     os.makedirs(out_dir, exist_ok=True)
     rows = [e for e in expenses if e.date.startswith(month_str)]
     total, avg = total_and_average(rows)
-    file_path = os.path.join(out_dir, f"report_{month_str}.csv")
+    file_path = REPORTS_DIR / f"report_{month_str}.csv"
     with open(file_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(["Date", "Category", "Amount", "Description"])
@@ -73,7 +80,7 @@ def generate_category_chart(expenses, out_dir="reports"):
     amounts = list(totals.values())
 
     os.makedirs(out_dir, exist_ok=True)
-    file_path = os.path.join(out_dir, "category_spending.png")
+    file_path = CHARTS_DIR / "category_spending.png"
 
     plt.figure()
     plt.pie(amounts, labels=categories, autopct='%1.1f%%', startangle=90)
@@ -106,7 +113,7 @@ def generate_monthly_spending_chart(expenses, out_dir="reports"):
     amounts = [totals[m] for m in months]
 
     os.makedirs(out_dir, exist_ok=True)
-    file_path = os.path.join(out_dir, "monthly_spending.png")
+    file_path = CHARTS_DIR / "monthly_spending.png"
 
     plt.figure(figsize=(8,5))
     plt.bar(months, amounts, color='skyblue')
@@ -142,7 +149,7 @@ def generate_budget_vs_actual_chart(expenses, out_dir="reports"):
     actual_values = [actuals.get(cat, 0) for cat in categories]
 
     os.makedirs(out_dir, exist_ok=True)
-    file_path = os.path.join(out_dir, "budget_vs_actual.png")
+    file_path = CHARTS_DIR / "budget_vs_actual.png"
 
     import numpy as np
     x = np.arange(len(categories))

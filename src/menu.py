@@ -1,4 +1,3 @@
-# menu.py
 import os
 from time import sleep
 from src.file_manager import load_expenses, append_expense, save_expenses, backup_data, list_backups, restore_backup

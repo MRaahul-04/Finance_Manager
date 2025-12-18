@@ -1,0 +1,8 @@
+Date,Category,Amount,Description
+2024-02-15,Bills,1800.00,Electricity bill
+2024-02-18,Health,650.00,Pharmacy
+2024-02-20,Transport,300.00,Bus & metro
+2024-02-01,Transport,300.00,Car
+
+Total,3050.00
+Average,762.50
