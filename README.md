@@ -247,13 +247,17 @@ screenshots/
 
 ### 📸 Application Screenshots
 
-| Main Menu                                  | Add Expense                                    | Budget Alerts                                    |
-|--------------------------------------------|------------------------------------------------|--------------------------------------------------|
-| ![Main Menu](screenshots/01_main_menu.png) | ![Add Expense](screenshots/02_add_expense.png) | ![Budget Alert](screenshots/10_budget_alert.png) |
+| Main Menu                                  | Add Expense                                    |
+|--------------------------------------------|------------------------------------------------|
+| ![Main Menu](screenshots/01_main_menu.png) | ![Add Expense](screenshots/02_add_expense.png) |
 
-| Category Spending                                          | Monthly Spending                                         | Budget vs Actual                                         |
-|------------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| ![Category Spending](screenshots/07_category_spending.png) | ![Monthly Spending](screenshots/08_monthly_spending.png) | ![Budget vs Actual](screenshots/09_budget_vs_actual.png) |
+| Budget Alerts                                    | Category Spending                                          |
+|--------------------------------------------------|------------------------------------------------------------|
+| ![Budget Alert](screenshots/10_budget_alert.png) | ![Category Spending](screenshots/07_category_spending.png) |
+
+| Monthly Spending                                         | Budget vs Actual                                         |
+|----------------------------------------------------------|----------------------------------------------------------|
+| ![Monthly Spending](screenshots/08_monthly_spending.png) | ![Budget vs Actual](screenshots/09_budget_vs_actual.png) |
 
 ---
 ## 🧪 Testing
@@ -270,6 +274,10 @@ pytest -v
 * File persistence
 * Budget logic
 * Expense operations
+
+| Test Case validation                                       |
+|------------------------------------------------------------|
+| ![Main Menu](screenshots/12_test_cases_and_validation.png) |
 
 ---
 
