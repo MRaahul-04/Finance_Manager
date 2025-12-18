@@ -201,33 +201,28 @@ Charts are generated using **matplotlib** and saved automatically.
 📁 Location:
 
 ```
-reports/
+charts/
 ```
 
 ### 🖼 Screenshot Suggestions (Add to GitHub)
 
-Create a folder:
+Added to below folder:
 
 ```
 screenshots/
 ```
 
-Add:
+### 📸 Application Screenshots
 
-* `main_menu.png` → CLI main menu
-* `add_expense.png` → Adding an expense
-* `budget_alert.png` → Budget alert output
-* `category_chart.png` → Category spending chart
-* `budget_vs_actual.png` → Budget comparison chart
+| Main Menu                                  | Add Expense                                    | Budget Alerts                                    |
+|--------------------------------------------|------------------------------------------------|--------------------------------------------------|
+| ![Main Menu](screenshots/01_main_menu.png) | ![Add Expense](screenshots/02_add_expense.png) | ![Budget Alert](screenshots/10_budget_alert.png) |
 
-📌 Embed in README:
-
-```md
-![Category Chart](screenshots/category_chart.png)
-```
+| Category Spending                                          | Monthly Spending                                         | Budget vs Actual                                         |
+|------------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
+| ![Category Spending](screenshots/07_category_spending.png) | ![Monthly Spending](screenshots/08_monthly_spending.png) | ![Budget vs Actual](screenshots/09_budget_vs_actual.png) |
 
 ---
-
 ## 🧪 Testing
 
 Run all unit tests:
